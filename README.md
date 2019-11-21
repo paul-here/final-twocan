@@ -1,3 +1,12 @@
+## Work in Progress Notes
+
+* GS - Generated Components for Home and Login, began scaffolding said pages
+* Problems
+- Sidenav not working, attempting to animate friends list so it can be toggled, nesting user functions within that menu as well. Abandoning the right hand menu design.
+- Need to create the main chat window, my thought is that it should work as /home/{username}, similar to products in webstore.
+- Animation Work, a lot of it, needs to be done.
+
+
 # FinalTwocan
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
