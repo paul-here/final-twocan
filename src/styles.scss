@@ -1,1 +1,134 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$final-twocan-primary: mat-palette($mat-indigo);
+$final-twocan-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$final-twocan-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$final-twocan-theme: mat-light-theme($final-twocan-primary, $final-twocan-accent, $final-twocan-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($final-twocan-theme);
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+
+$primary: rgb(220, 20, 60);
+
+body {
+    margin: 0;
+    font-family: 'Nunito', 'sans-serif';
+    font-size: 18px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background: $primary;
+    padding: 1em 0;
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a.logo {
+        font-weight: bold;
+    }
+
+    nav {
+        float: right;
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            display: flex;
+
+            li a {
+                padding: 1em;
+
+                &:hover {
+                    background: darken($primary, 10%);
+                }
+            }
+        }
+    }
+}
+
+h1 {
+    margin-top: 2em;
+}/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.ex-container{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    border: none;
+}
+
+#cSideNav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: $primary;
+    //overflow-x: scroll;
+    padding-top: 52px;
+    //transition: 0.5s;
+}
+
+#cSideNav a{
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 10px;
+    color: white;
+    background-color: $primary;
+    display:block;
+}
+
+.Xcontainer {
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
