@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  users = ['Jorge','Mikal','Paul','Gurpreet']
+
   constructor() { }
 
   ngOnInit() {

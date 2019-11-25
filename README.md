@@ -5,6 +5,10 @@
 - Sidenav not working, attempting to animate friends list so it can be toggled, nesting user functions within that menu as well. Abandoning the right hand menu design.
 - Need to create the main chat window, my thought is that it should work as /home/{username}, similar to products in webstore.
 - Animation Work, a lot of it, needs to be done.
+- Created Login and Create Account as 2 seperate components.
+- Friends and Groups(sidenav) are tables listing if they have messages or not.
+- Buttons are connected to represent flow.
+- View Message(is a modal/popup window) that would display current messages.
 
 
 # FinalTwocan
