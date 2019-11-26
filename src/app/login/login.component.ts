@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-login',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  // username: string;
+  // password: string;
 
   constructor() { }
 
@@ -13,5 +16,13 @@ export class LoginComponent implements OnInit {
     
 
   }
+  gettingUserInfo(){
+    var username = (document.getElementById("email"));
+    var password = (document.getElementById("password"));
 
+    //Call to service to request users information
+    console.log(username);
+    console.log(password);
+
+  }
 }
