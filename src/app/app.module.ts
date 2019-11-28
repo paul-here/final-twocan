@@ -13,6 +13,7 @@ import { GroupsComponent } from './groups/groups.component';
 import { CreateacctComponent } from './createacct/createacct.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LogoutComponent } from './logout/logout.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LogoutComponent } from './logout/logout.component';
     GroupsComponent,
     CreateacctComponent,
     SettingsComponent,
-    LogoutComponent
+    LogoutComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ import { GroupsComponent } from './groups/groups.component';
 import { CreateacctComponent} from './createacct/createacct.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SettingsComponent } from './settings/settings.component';
+import { MessageComponent } from './message/message.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'groups', component: GroupsComponent},
   { path: 'createacct', component: CreateacctComponent},
   { path: 'logout', component: LogoutComponent},
-  { path: 'settings', component: SettingsComponent}
+  { path: 'settings', component: SettingsComponent},
+  { path: 'message', component: MessageComponent}
   
 ];
 
