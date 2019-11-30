@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { stringify } from 'querystring';
+import { Router } from '@angular/router';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -7,22 +8,23 @@ import { stringify } from 'querystring';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  // username: string;
-  // password: string;
+  username: 'Jorge'
+  password: ''
+  invalidLogin = false
 
-  constructor() { }
+  constructor(private router: Router, private loginService: AuthenticationService) { }
 
   ngOnInit() {
     
 
   }
-  gettingUserInfo(){
-    var username = (document.getElementById("email"));
-    var password = (document.getElementById("password"));
-
-    //Call to service to request users information
-    console.log(username);
-    console.log(password);
-
+  checkLogin(){
+    if(this.loginService.authenticate(this.username,this.password)){
+      this.router.navigate([''])
+      this.invalidLogin = false
+    }
+    else {
+      this.invalidLogin = true
+    }
   }
 }

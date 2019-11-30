@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 // app.use("/chats", chatRouter);
 // app.use("/login", loginRouter);
 
-app.use(express.static(__dirname + "/dist/final-twocan"));
-socket = io(http);
-const connect = require("./dbconnect");
+app.use(express.static(__dirname + "/final-twocan"));
+const socket = io(http);
+//const connect = require("./dbconnect");
 
 socket.on("connection", (socket)=>{
     console.log("user connected");
@@ -25,33 +25,33 @@ socket.on("connection", (socket)=>{
         console.log("user disconnected");
       });
 
-//Someone is typing
-socket.on("typing", data => {
-    socket.broadcast.emit("notifyTyping", {
-      user: data.user,
-      message: data.message
-    });
-  });
+// //Someone is typing
+// socket.on("typing", data => {
+//     socket.broadcast.emit("notifyTyping", {
+//       user: data.user,
+//       message: data.message
+//     });
+//   });
 
-  //when soemone stops typing
-  socket.on("stopTyping", () => {
-    socket.broadcast.emit("notifyStopTyping");
-  });
+//   //when soemone stops typing
+//   socket.on("stopTyping", () => {
+//     socket.broadcast.emit("notifyStopTyping");
+//   });
 
-  socket.on("chat message", function(msg) {
-    console.log("message: " + msg);
+//   socket.on("chat message", function(msg) {
+//     console.log("message: " + msg);
 
-    //broadcast message to everyone in port:5000 except yourself.
-    socket.broadcast.emit("received", { message: msg });
+//     //broadcast message to everyone in port:5000 except yourself.
+//     socket.broadcast.emit("received", { message: msg });
 
-    //save chat to the database
-    connect.then(db => {
-      console.log("connected correctly to the server");
-      let chatMessage = new Chat({ message: msg, sender: "Anonymous" });
+//     //save chat to the database
+//     connect.then(db => {
+//       console.log("connected correctly to the server");
+//       let chatMessage = new Chat({ message: msg, sender: "Anonymous" });
 
-      chatMessage.save();
-    });
-  });
+//       chatMessage.save();
+//     });
+//   });
   http.listen(port, () => {
     console.log("Running on Port: " + port);
   });

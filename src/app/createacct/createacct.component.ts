@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateacctComponent implements OnInit {
 
+  
+
   constructor() { }
 
   ngOnInit() {
   }
+  createAccount(){
+    var firstName = document.getElementById("inputFName");
+    var lastName = document.getElementById("inputLName");
+    var email = document.getElementById("inputEmail");
+    var password = document.getElementById("inputPassword");
 
+    console.log(firstName.getAttribute('value'));
+    console.log(lastName);
+    console.log(email);
+    console.log(password);
+
+
+  }
 }
