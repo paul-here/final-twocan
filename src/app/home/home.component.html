@@ -1,23 +1,20 @@
 <!-- <p>home works!</p> -->
+<!-- <nav class="nav flex-column">
+  <ul>      
+  <a *ngIf="loginService.isUserLoggedIn()" class="nav-link " routerLink="/friends">Friends</a>
+  <a class="nav-link" routerLink="/groups">Groups</a>
+  <a class = "nav-link" routerLink="/settings">Settings</a> 
+  <a class = "nav-link"  routerLink="/login" >Logout</a>
+  </ul>
+</nav>  -->
 <nav class="nav flex-column">
-        <a class="nav-link active" routerLink="/friends">Friends</a>
-        <!-- <ul class="nav nav-tabs">
-        <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Friends</a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Separated link</a>
-                </div>
-              </li>
-        </ul>        -->
-        <a class="nav-link" routerLink="/groups">Groups</a>
-        <a class = "nav-link" routerLink="/settings">Settings</a>
-        <a class = "nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/login" >Logout</a>
-</nav> 
-
+    <ul>      
+    <a *ngIf="loginService.isUserLoggedIn()" routerLink="/friends" class="nav-link " >Friends</a>
+    <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/groups">Groups</a>
+    <a *ngIf="loginService.isUserLoggedIn()" class = "nav-link" routerLink="/settings">Settings</a> 
+    <a *ngIf="loginService.isUserLoggedIn()" routerLink="/login" class = "nav-link"   >Logout</a>
+    </ul>
+  </nav> 
 <div class = "welcomeMsg">
   <h1>Welcome User! </h1>
   <button class="btn btn-warning">Add Friend</button>

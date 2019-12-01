@@ -31,7 +31,7 @@ function myFunction(x) {
         
       <ul>
         <li><a routerLink="/home">Home</a></li>
-        <li><a  *ngIf="!loginService.isUserLoggedIn()" routerLink="/login">Log-In</a></li>
+        <li><a  routerLink="/login">Log-In</a></li>
       </ul>
       <!-- <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
         aria-controls="navbarSupportedContent20" aria-expanded="true" aria-label="Toggle navigation">
@@ -39,6 +39,7 @@ function myFunction(x) {
     </button> -->
   
     </nav>
+  
 <!-- <nav class="navbar navbar-dark red lighten-1 mb-4">
 
     <a class="navbar-brand" href="#">Navbar</a>
@@ -67,7 +68,14 @@ function myFunction(x) {
   </nav>  -->
   </div> 
 </header>
-
+  <nav class="nav flex-column">
+        <ul>      
+        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/friends" class="nav-link " >Friends</a>
+        <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" routerLink="/groups">Groups</a>
+        <a *ngIf="!loginService.isUserLoggedIn()" class = "nav-link" routerLink="/settings">Settings</a> 
+        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class = "nav-link"   >Logout</a>
+        </ul>
+      </nav> 
 
 
 <div class="container">

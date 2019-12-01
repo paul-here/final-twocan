@@ -9,16 +9,17 @@ import { CreateacctComponent} from './createacct/createacct.component';
 import { LogoutComponent } from './logout/logout.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MessageComponent } from './message/message.component';
+import { AuthGaurdService } from './service/auth-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'friends',component: FriendsComponent},
-  { path: 'groups', component: GroupsComponent},
+  { path: 'home', component: HomeComponent,canActivate:[AuthGaurdService] },
+  { path: 'friends',component: FriendsComponent,canActivate:[AuthGaurdService]},
+  { path: 'groups', component: GroupsComponent,canActivate:[AuthGaurdService]},
   { path: 'createacct', component: CreateacctComponent},
   { path: 'logout', component: LogoutComponent},
-  { path: 'settings', component: SettingsComponent},
-  { path: 'message', component: MessageComponent}
+  { path: 'settings', component: SettingsComponent,canActivate:[AuthGaurdService]},
+  { path: 'message', component: MessageComponent,canActivate:[AuthGaurdService]}
   
 ];
 

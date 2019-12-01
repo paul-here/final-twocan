@@ -10,7 +10,8 @@ import { AuthenticationService } from '../service/authentication.service';
 export class LoginComponent implements OnInit {
   username: 'Jorge'
   password: ''
-  invalidLogin = true
+  invalidLogin = false
+  loginError: string
 
   constructor(private router: Router, private loginService: AuthenticationService) { }
 
@@ -22,10 +23,12 @@ export class LoginComponent implements OnInit {
     if(this.loginService.authenticate(this.username,this.password)){
       this.router.navigate(['/home'])
       this.invalidLogin = false
+      
       console.log("Valid")
     }
     else {
       this.invalidLogin = true
+      this.loginError = "Username or Password is incorrect"
       console.log("Invalid")
     }
   }
