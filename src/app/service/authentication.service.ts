@@ -8,7 +8,7 @@ export class AuthenticationService {
   constructor() { }
 
   authenticate(username,password){
-    if(username === "jorge" && password === "password"){
+    if(username === "Jorge" && password === "password"){
       sessionStorage.setItem('username',username)
       return true;
     }

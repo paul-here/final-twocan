@@ -15,7 +15,7 @@
         </ul>        -->
         <a class="nav-link" routerLink="/groups">Groups</a>
         <a class = "nav-link" routerLink="/settings">Settings</a>
-        <a class = "nav-link" routerLink="/logout">Logout</a>
+        <a class = "nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/login" >Logout</a>
 </nav> 
 
 <div class = "welcomeMsg">

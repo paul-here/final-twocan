@@ -31,7 +31,7 @@ function myFunction(x) {
         
       <ul>
         <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/login">Log-In</a></li>
+        <li><a  *ngIf="!loginService.isUserLoggedIn()" routerLink="/login">Log-In</a></li>
       </ul>
       <!-- <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
         aria-controls="navbarSupportedContent20" aria-expanded="true" aria-label="Toggle navigation">
