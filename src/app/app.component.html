@@ -3,8 +3,16 @@ function myFunction(x) {
   x.classList.toggle("change");
 }
 </script>-->
-
+<!-- <script>
+  $(document).ready(function(){
+    $('.second-button').on('click',function (){
+      $('.animated-icon2').toggleClass('open');
+    });
+  });
+</script> -->
 <header>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <!--<mat-drawer-container class="ex-container">
     <mat-drawer mode="side" opened>
       Friends list buttons go here
@@ -18,23 +26,57 @@ function myFunction(x) {
           <div class="bar3"></div>
         </div>-->
     <a routerLink="/" class="logo">Twocan, Build 1.</a>
-    <nav>
-      <ul>
-        <li><a href="#" routerLink="/">Home</a></li>
-        <li><a href="#" routerLink="/login">Log-In</a></li>
-      </ul>
-    </nav>
-    
-  </div>
-</header>
 
-<!--<div class="container">
-  <div id="cSideNav">
-    <a href="#" routerLink="/friends/{id1}">Friend 1</a>
-    <a href="#" routerLink="/friends/{id2}">Friend 2</a>
-    <a href="#" routerLink="/friends/{id3}">Friend 3</a>
-  </div>
-</div>-->
+    <nav>
+        
+      <ul>
+        <li><a routerLink="/home">Home</a></li>
+        <li><a  routerLink="/login">Log-In</a></li>
+      </ul>
+      <!-- <button class="navbar-toggler first-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent20"
+        aria-controls="navbarSupportedContent20" aria-expanded="true" aria-label="Toggle navigation">
+      <div class="animated-icon2"><span></span><span></span><span></span></div>
+    </button> -->
+  
+    </nav>
+  
+<!-- <nav class="navbar navbar-dark red lighten-1 mb-4">
+
+    <a class="navbar-brand" href="#">Navbar</a>
+  
+    <button class="navbar-toggler second-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23"
+      aria-controls="navbarSupportedContent23" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon2"><span></span><span></span><span></span><span></span></div>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+  
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+      </ul>
+  
+    </div>
+  
+  </nav>  -->
+  </div> 
+</header>
+  <nav class="nav flex-column">
+        <ul>      
+        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/friends" class="nav-link " >Friends</a>
+        <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" routerLink="/groups">Groups</a>
+        <a *ngIf="!loginService.isUserLoggedIn()" class = "nav-link" routerLink="/settings">Settings</a> 
+        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class = "nav-link"   >Logout</a>
+        </ul>
+      </nav> 
+
 
 <div class="container">
   <router-outlet></router-outlet>
