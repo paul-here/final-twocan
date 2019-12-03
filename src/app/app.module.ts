@@ -14,6 +14,7 @@ import { CreateacctComponent } from './createacct/createacct.component';
 import { SettingsComponent } from './settings/settings.component';
 import { LogoutComponent } from './logout/logout.component';
 import { MessageComponent } from './message/message.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MessageComponent } from './message/message.component';
     CreateacctComponent,
     SettingsComponent,
     LogoutComponent,
-    MessageComponent
+    MessageComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
