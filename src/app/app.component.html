@@ -25,7 +25,7 @@ function myFunction(x) {
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>-->
-    <a routerLink="/" class="logo">Twocan, Build 1.</a>
+    <a routerLink="/home" class="logo">Twocan, Build 1.</a>
 
     <nav>
         
@@ -70,10 +70,10 @@ function myFunction(x) {
 </header>
   <nav class="nav flex-column">
         <ul>      
-        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/friends" class="nav-link " >Friends</a>
-        <a *ngIf="!loginService.isUserLoggedIn()" class="nav-link" routerLink="/groups">Groups</a>
-        <a *ngIf="!loginService.isUserLoggedIn()" class = "nav-link" routerLink="/settings">Settings</a> 
-        <a *ngIf="!loginService.isUserLoggedIn()" routerLink="/login" class = "nav-link"   >Logout</a>
+        <a *ngIf="loginService.isUserLoggedIn()" routerLink="/friends" class="nav-link " >Friends</a>
+        <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/groups">Groups</a>
+        <a *ngIf="loginService.isUserLoggedIn()" class = "nav-link" routerLink="/settings">Settings</a> 
+        <a *ngIf="loginService.isUserLoggedIn()" routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a>
         </ul>
       </nav> 
 

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     if(this.loginService.authenticate(this.username,this.password)){
       this.router.navigate(['/home'])
       this.invalidLogin = false
-      
+      //this.loginService.logout();
       console.log("Valid")
     }
     else {
