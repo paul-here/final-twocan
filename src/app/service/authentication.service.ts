@@ -8,7 +8,16 @@ export class AuthenticationService {
   constructor() { }
 
   authenticate(username,password){
-    if(username === "Jorge" && password === "password"){
+    if(username == "Jorge" && password == "password"){
+      sessionStorage.setItem('username',username)
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+  checkAdmin(username,password){
+    if(username === "admin" && password === "admin"){
       sessionStorage.setItem('username',username)
       return true;
     }
@@ -21,6 +30,11 @@ export class AuthenticationService {
     console.log(!(user === null))
     return !(user === null)
 
+  }
+  isAdminLoggedIn(){
+    let admin = sessionStorage.getItem('username')
+    console.log(!(admin === null))
+    return !(admin === null)
   }
   logout(){
     sessionStorage.removeItem('username');

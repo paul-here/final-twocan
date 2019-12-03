@@ -23,8 +23,13 @@ export class LoginComponent implements OnInit {
     if(this.loginService.authenticate(this.username,this.password)){
       this.router.navigate(['/home'])
       this.invalidLogin = false
-      
+      //this.loginService.logout();
       console.log("Valid")
+    }
+    else if(this.loginService.checkAdmin(this.username,this.password)){
+      this.router.navigate(['/admin'])
+      this.invalidLogin = false
+      console.log("Admin logged in!")
     }
     else {
       this.invalidLogin = true
