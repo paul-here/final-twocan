@@ -6,7 +6,12 @@
 }
 
 .side_side{
-    display: inline-block;
+    display: inline-flexbox;
     width: auto;
     height: auto;
+    vertical-align: middle;
+
 }
+// .container{
+//     width:50%;
+// }

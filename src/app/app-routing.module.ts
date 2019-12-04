@@ -10,7 +10,8 @@ import { LogoutComponent } from './logout/logout.component';
 import { SettingsComponent } from './settings/settings.component';
 import { MessageComponent } from './message/message.component';
 import { AuthGaurdService } from './service/auth-guard.service';
-import {AdminComponent } from './admin/admin.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminGuardService } from './service/admin-guard.service';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -21,7 +22,7 @@ const routes: Routes = [
   { path: 'logout', component: LogoutComponent},
   { path: 'settings', component: SettingsComponent,canActivate:[AuthGaurdService]},
   { path: 'message', component: MessageComponent,canActivate:[AuthGaurdService]},
-  { path: 'admin', component: AdminComponent}
+  { path: 'admin', component: AdminComponent,canActivate:[AdminGuardService]}
   
 ];
 

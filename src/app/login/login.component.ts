@@ -26,14 +26,21 @@ export class LoginComponent implements OnInit {
       //this.loginService.logout();
       console.log("Valid")
     }
-    else if(this.loginService.checkAdmin(this.username,this.password)){
-      this.router.navigate(['/admin'])
-      this.invalidLogin = false
-      console.log("Admin logged in!")
-    }
+
     else {
       this.invalidLogin = true
       this.loginError = "Username or Password is incorrect"
+      console.log("Invalid")
+    }
+  }
+  checkAdminLogin(){
+    if(this.loginService.checkAdmin(this.username,this.password)){
+      this.router.navigate(['/admin'])
+      this.invalidLogin = false
+      console.log("Admin logged in")
+    }
+    else{
+      this.invalidLogin = true
       console.log("Invalid")
     }
   }
