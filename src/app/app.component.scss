@@ -1,3 +1,17 @@
 .side_nav{
-    width: 10px;
+    //margin-left : 0px;
+    position: absolute;
+    left: 0px;
+    display:inline-block;
 }
+
+.side_side{
+    display: inline-flexbox;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+
+}
+// .container{
+//     width:50%;
+// }

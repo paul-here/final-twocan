@@ -43,7 +43,7 @@ function myFunction(x) {
 
   </div> 
 </header>
-<div class="side_nav">
+<!--<div class="side_nav">
   <nav class="nav flex-column">
         <ul>      
         <a *ngIf="loginService.isUserLoggedIn() "  routerLink="/friends" class="nav-link " >Friends</a>
@@ -52,8 +52,20 @@ function myFunction(x) {
         <a *ngIf="loginService.isUserLoggedIn(); "  routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a>
         </ul>
       </nav> 
-    </div>
+    </div>-->
 
 <div class="container">
-  <router-outlet></router-outlet>
+    <div class="side_nav">
+        <nav class="nav flex-column">
+              <ul>      
+              <a *ngIf="loginService.isUserLoggedIn() "  routerLink="/friends" class="nav-link " >Friends</a>
+              <a *ngIf="loginService.isUserLoggedIn(); "  class="nav-link" routerLink="/groups">Groups</a>
+              <a *ngIf="loginService.isUserLoggedIn(); "  class = "nav-link" routerLink="/settings">Settings</a> 
+              <a *ngIf="loginService.isUserLoggedIn(); "  routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a>
+              </ul>
+            </nav> 
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
 </div>
