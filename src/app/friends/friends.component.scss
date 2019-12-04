@@ -1,7 +1,8 @@
 .friendsList{
     margin: 0px auto;
     width: 50%;
-    
+    position: relative;
+
 }
 .black white-text{
     background-color: red;
@@ -11,4 +12,11 @@
   display: block;
   margin: 0 auto;
 
+}
+.btn{
+  padding: 10px;
+}
+.bottom_wrapper{
+  //position: absolute;
+  display: inline-block;
 }

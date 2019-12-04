@@ -6,9 +6,9 @@ const mongoose = require('mongoose');
 
 const http = require("http").Server(app);
 
-const io = require("socket.io");
+// const io = require("socket.io");
 
-const port = 5000;
+let port = process.env.PORT || 4000;
 app.use(bodyParser.json());
 //routes
 // app.use("/chats", chatRouter);
