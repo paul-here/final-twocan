@@ -8,13 +8,14 @@
 }
 .chat_window {
     position: relative;
-    width: calc(100% - 20px);
+    //width: calc(100% - 20px);
     max-width: 400px;
     height: 200px;
+
     border-radius: 10px;
-    //background-color: #fff;
+    background-color: #fff;
     left: 30%;
-    // top: 50%;
+    top: 50%;
     //transform: translateX(-50%) translateY(-50%);
     box-shadow: 0 10px 20px rgb(228, 16, 16);
     //background-color: #f8f8f8;
