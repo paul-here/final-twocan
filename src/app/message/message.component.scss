@@ -1,6 +1,7 @@
 
 .title{
     text-align: center;
+    padding-bottom: 20px;
 }
 .message_input_wrapper{
     margin: center;
@@ -42,16 +43,27 @@
     position: relative;
     padding: 0 10px;
   }
-.bottom_wrapper .message_input_wrapper .message_input {
+.bottom_wrapper .message_input_wrapper .message_input{
     border: none;
     height: 100%;
     box-sizing: border-box;
     width: calc(100% - 40px);
     position: absolute;
-    outline-width: 0;
+    outline-width: 5;
     color: gray;
+    padding-left: 20px;
   }
 #sendBtn{
   position: inline-block;
-  margin: 20px;
+  margin-left: 70px;
+  margin-bottom: 40px;
+  
+
 }
+// .messages{
+//   //background-color: gray;
+// }
+.top_menu{
+  background-color: rgb(250,102,102);
+}
+

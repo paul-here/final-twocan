@@ -16,21 +16,9 @@
             <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)] = "password" >
             <small id="pwHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
         </div>
-        <!-- <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>  -->
+       
         <button type="button" (click) = checkLogin() (click)= checkAdminLogin() class="btn btn-danger"  >Submit</button><br>
         <button type="button" id ="createBtn"class="btn btn-link" routerLink="/createacct">Create Account</button>
     </form>
 
 </div>
-<!-- <div class="container">
-        <div>
-          User Name : <input type="text" name="username" [(ngModel)]="username">
-          Password : <input type="password" name="password" [(ngModel)]="password">
-        </div>
-        <button (click)=checkLogin() class="btn btn-success">
-          Login
-        </button>
-      </div> -->
