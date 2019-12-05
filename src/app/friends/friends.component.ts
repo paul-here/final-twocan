@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./friends.component.scss']
 })
 export class FriendsComponent implements OnInit {
-  elements: any = [{id:1,profile_pic:"userProfile.png",name:"Jack" },
-   {id:2,profile_pic:"userProfile.png",name:"Mikal"},
-   {id:3,profile_pic:"userProfile.png", name:"Paul"},
-   {id:4,profile_pic:"userProfile.png",name:"Gurpreet"}
+  elements: any = [{id:1,name:"Jack" },
+   {id:2,name:"Mikal"},
+   {id:3,name:"Paul"},
+   {id:4,name:"Gurpreet"}
 
   ];
-  headElements = ['ID','Profile Picture', 'Name','']
+  headElements = ['Name','']
 
  
   constructor() { }
