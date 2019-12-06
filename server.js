@@ -2,23 +2,23 @@ const express = require("express");
 const app = express();
 const dateTime = require("simple-datetime-formater");
 const bodyParser = require("body-parser");
-const mongoose = require('mongoose');
+//const mongoose = require('mongoose');
 
-const http = require("http").Server(app);
+const http = require("https").Server(app);
 
 // const io = require("socket.io");
 
 let port = process.env.PORT || 4000;
-app.use(bodyParser.json());
+//app.use(bodyParser.json());
 //routes
 // app.use("/chats", chatRouter);
 // app.use("/login", loginRouter);
 
-mongoose.connect(`mongodb://localhost:27017/`)
-.then(() => {
-  console.log('Connected to database');
-  app.listen(port, () => {
-    console.log(`Express server listening on port ${port}`);
-  });
-});
+// mongoose.connect(`mongodb://localhost:27017/`)
+// .then(() => {
+//   console.log('Connected to database');
+//   app.listen(port, () => {
+//     console.log(`Express server listening on port ${port}`);
+//   });
+// });
 app.use(express.static(__dirname + "/final-twocan"));
