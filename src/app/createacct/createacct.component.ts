@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {User } from '../service/User';
 import {HttpClient} from '@angular/common/http';
-
+import { ApiServiceService } from '../service/api-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-createacct',
@@ -13,7 +14,7 @@ export class CreateacctComponent implements OnInit {
  
 
 
-  constructor() { }
+  constructor(public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
   ngOnInit() {
   }
@@ -34,15 +35,14 @@ export class CreateacctComponent implements OnInit {
     let user = {
       username: _username,
       email: _email,
-      password :_password
+      password :_password,
+      friends: null,
+      groups: null
 
     };
-    this.http.get<User[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/getAll').subscribe(data => {
+    this.http.post<User>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/addUser',user).subscribe(data => {
       console.log(data);
-      this.Users = data;
-    //   for(i : data)
-    //     list.pushback(i);
-    // })
+    
     })
 
 
