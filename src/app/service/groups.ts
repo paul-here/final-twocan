@@ -1,6 +1,6 @@
 import {User} from './User';
 
-export class groups{
+export class Groups{
     id:string;
     users: Array<User>;
 }

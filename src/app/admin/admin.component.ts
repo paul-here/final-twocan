@@ -27,9 +27,7 @@ export class AdminComponent implements OnInit {
     this.http.get<User[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/getAll').subscribe(data => {
       console.log(data);
       this.Users = data;
-    //   for(i : data)
-    //     list.pushback(i);
-    // })
+    
     })
   }
 
