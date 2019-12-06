@@ -1,6 +1,6 @@
-import {user} from './user';
+import {User} from './User';
 
 export class groups{
     id:string;
-    users: Array<user>;
+    users: Array<User>;
 }

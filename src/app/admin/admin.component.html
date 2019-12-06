@@ -2,19 +2,30 @@
 
 <div class="adminContainer">
   <div class = "friendsList">
+      <h3>Admin</h3>
     <table class="table table-bordered">
-        <h3>Admin</h3>
-        
-        
-          <tr >
-            <!-- <td><img [src]="{{el.profile_pic}}"></td> -->
-           
-            <td></td>
-            <td><button type="button" (click) = getallUsers() class="btn btn-warning" data-toggle="modal" data-target="#msgModal">View Friends</button></td>
 
-          </tr>
-          
         
+        <!-- <td><button type="button" (click) = getallUsers() class="btn btn-warning" data-toggle="modal" data-target="#msgModal">View Friends</button></td> -->
+
+        <!-- <tr><td *ngFor="let users of Users"> {{ users["username"] }}</td></tr> -->
+          <!-- <tr >
+           
+            <td *ngFor="let users of Users"> {{ users["username"] }}</td>
+            
+            
+          </tr>
+          <tr>
+              <td *ngFor="let users of Users"> {{users["email"]}}</td>
+          </tr> -->
+          
+        <tr *ngFor="let users of Users" >
+        <td>{{users["username"]}}</td>
+        <td>{{users["email"]}}</td>
+        <td>{{users["friends"]}}</td>
+        <td><button type="button" class="btn btn-warning">Remove User</button></td>
+
+      </tr>
     </table>
   </div>
 </div>

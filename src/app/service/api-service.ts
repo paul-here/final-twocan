@@ -1,34 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders,HttpResponse} from '@angular/common/http';
 import { Observable,throwError } from 'rxjs';
-import { user } from './user';
+import { User } from './User';
 import { retry, catchError } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiServiceService {
- apiURL = 'https://twocan-zuul.us-east-2.elasticbeanstalk.com/'
+ apiURL = 'https://twocan-zuul.us-east-2.elasticbeanstalk.com'
   constructor(private http: HttpClient) { }
 
   httpOptions = {
     headers: new HttpHeaders({'Content-Type':'application/json'})
   }
 
-  getAllUsers():Observable<user>{
-    return this.http.get<user>(this.apiURL + '/users/getAll')
-    // .pipe(retry(1)
+  // getAllUsers():Observable<user>{
+  //   return this.http.get<user>(this.apiURL + '/users/getAll')
+  //   // .pipe(retry(1)
     
-    // )
+  //   // )
 
 
-  }
-  deleteUser(id){
-   return this.http.delete<user>(this.apiURL + '/users/' + id,this.httpOptions).pipe(
-     retry(1),
-     catchError(this.handleError)
-   )
-  }
+  // }
+  // deleteUser(id){
+  //  return this.http.delete<user>(this.apiURL + '/users/' + id,this.httpOptions).pipe(
+  //    retry(1),
+  //    catchError(this.handleError)
+  //  )
+  // }
   handleError(error) {
     let errorMessage = '';
     if(error.error instanceof ErrorEvent) {
