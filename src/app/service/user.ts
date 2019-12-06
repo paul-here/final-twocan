@@ -1,10 +1,10 @@
-import {friends} from './friends';
-import {groups} from './groups';
+import {Friends} from './friends';
+import {Groups} from './Groups';
 
-export class user{
+export class User{
     username:string;
     password:string;
     email:string;
-    friendsList:Array<friends>;
-    groupsList:Array<groups>;
+    friendsList:Array<Friends>;
+    groupsList:Array<Groups>;
 }

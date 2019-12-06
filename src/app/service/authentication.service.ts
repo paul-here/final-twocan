@@ -10,6 +10,8 @@ export class AuthenticationService {
   authenticate(username,password){
     if(username == "Jorge" && password == "password"){
       sessionStorage.setItem('username',username)
+      let key = username;
+      //localStorage.setItem(key,this.username);
       return true;
     }
     else{
@@ -19,6 +21,7 @@ export class AuthenticationService {
   checkAdmin(username,password){
     if(username === "admin" && password === "admin"){
       sessionStorage.setItem('username',username)
+
       return true;
     }
     else{

@@ -1,4 +1,4 @@
-export class friends{
+export class Friends{
     username:string;
     mergedId: string;
 }
