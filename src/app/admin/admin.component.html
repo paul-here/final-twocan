@@ -20,12 +20,17 @@
           </tr> -->
           
         <tr *ngFor="let users of Users" >
-        <td>{{users["username"]}}</td>
-        <td>{{users["email"]}}</td>
-        <td>{{users["friends"]}}</td>
-        <td><button type="button" class="btn btn-warning" value='{{users["username"]}}'>Remove User</button></td>
-
-      </tr>
+          <td>{{users.username}}</td>
+          <td>{{users.email}}</td>
+          <td>
+            <div *ngIf="users.friends">
+              <div *ngFor="let friend of users.friends">
+                {{friend.username}}
+              </div>
+            </div>
+          </td>
+          <td><button type="button" class="btn btn-warning" value='{{users["username"]}}'>Remove User</button></td>
+        </tr>
     </table>
   </div>
 </div>
