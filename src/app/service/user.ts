@@ -1,4 +1,4 @@
-import {Friends} from './friends';
+import {Friends} from './Friends';
 import {Groups} from './Groups';
 
 export class User{

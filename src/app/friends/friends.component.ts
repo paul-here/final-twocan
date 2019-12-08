@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
 import {HttpClient} from '@angular/common/http';
 import { ApiServiceService } from '../service/api-service';
-import { Friends } from '../service/friends';
+import { Friends } from '../service/Friends';
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -14,7 +14,7 @@ export class FriendsComponent implements OnInit {
   headElements = ['Name','']
 
 
-  Friends : Friends[] = [];
+  friends : Friends;
  
   constructor(private loginService: AuthenticationService,public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
@@ -27,7 +27,13 @@ export class FriendsComponent implements OnInit {
 
     //this.lo
     let user = sessionStorage.getItem("username");
-
+    //Friends = new Friends
+    //if()
+    // this.http.post<Friends>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/addFriend').subscribe(data => {
+    //   console.log(data);
+    //   this.friends = data;
+    
+    // })
 
   }
 
