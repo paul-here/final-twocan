@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   }
   checkLogin(){
+    alert(this.loginService.authenticate(this.username,this.password));
     if(this.loginService.authenticate(this.username,this.password)){
       this.router.navigate(['/home'])
       this.invalidLogin = false
