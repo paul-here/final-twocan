@@ -27,13 +27,15 @@ export class FriendsComponent implements OnInit {
 
     //this.lo
     let user = sessionStorage.getItem("username");
-    //Friends = new Friends
-    //if()
-    // this.http.post<Friends>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/addFriend').subscribe(data => {
-    //   console.log(data);
-    //   this.friends = data;
+    let f_request = {
+      username: user,
+      request: _request
+    };
+    this.http.post<Friends>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/addFriend',f_request).subscribe(data => {
+      console.log(data);
+      this.friends = data;
     
-    // })
+    })
 
   }
 

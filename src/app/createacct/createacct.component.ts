@@ -19,15 +19,7 @@ export class CreateacctComponent implements OnInit {
   ngOnInit() {
   }
   createAccount(){
-    // let firstName = document.getElementById("inputFName");
-    // let lastName = document.getElementById("inputLName");
-    // let email = document.getElementById("inputEmail");
-    // let password = document.getElementById("inputPassword");
-
-    // console.log(firstName.getAttribute('value'));
-    // console.log(lastName);
-    // console.log(email);
-    // console.log(password);
+    
 
     let _username : string = (document.getElementById("inputuserName")as HTMLInputElement).value;
     let _email : string = (document.getElementById("inputEmail") as HTMLInputElement).value;
