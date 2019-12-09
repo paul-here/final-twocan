@@ -27,6 +27,7 @@ export class FriendsComponent implements OnInit {
 
     //this.lo
     let user = sessionStorage.getItem("username");
+    
     let f_request = {
       username: user,
       request: _request

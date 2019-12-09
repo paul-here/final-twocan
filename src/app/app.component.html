@@ -8,7 +8,7 @@
     <nav> 
       <ul>
         <li><a routerLink="/home">Home</a></li>
-        <li><a  routerLink="/login">Log-In</a></li>
+        <li><a *ngIf="!loginService.isUserLoggedIn() "  routerLink="/login">Log-In</a></li>
       </ul>
     </nav>
   </div> 
@@ -23,7 +23,8 @@
               <a *ngIf="loginService.isUserLoggedIn(); "  class="nav-link" routerLink="/groups">Groups</a>
               <a *ngIf="loginService.isUserLoggedIn(); "  class = "nav-link" routerLink="/settings">Settings</a> 
               <a *ngIf="loginService.isUserLoggedIn(); "  routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a>
-              </ul>
+              <!-- <a *ngIf="loginService.isAdminLoggeIn(); " routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a> -->
+            </ul>
             </nav> 
     </div>
     <div class="container">

@@ -12,6 +12,9 @@ export class HomeComponent implements OnInit {
   constructor(private loginService: AuthenticationService) { }
 
   ngOnInit() {
+    let temp = sessionStorage.getItem("username");
+    //alert(temp);
+    
   }
 
 }
