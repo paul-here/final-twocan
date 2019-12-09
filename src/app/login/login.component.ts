@@ -25,17 +25,17 @@ export class LoginComponent implements OnInit {
   {
     if(this.username != 'admin')
     {
-      alert('User Path Active');
+      // alert('User Path Active');
       this.checkLogin();
     }
     else if(this.username == 'admin')
     {
-      alert('Admin Path Active');
+      // alert('Admin Path Active');
       this.checkAdminLogin();
     }
     else
     {
-      alert("Something's Wrong");
+      // alert("Something's Wrong");
     }
   }
 
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
     }
     else{
       this.invalidLogin = true
-      alert("you are NOT SUPPOSED TO BEHERE.");
+      // alert("you are NOT SUPPOSED TO BEHERE.");
       console.log("Invalid")
     }
   }
