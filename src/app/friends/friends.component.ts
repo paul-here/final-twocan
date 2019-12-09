@@ -31,12 +31,14 @@ export class FriendsComponent implements OnInit {
       username: user,
       request: _request
     };
+    //if(sessionStorage.getItem('username')){
     this.http.post<Friends>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/addFriend',f_request).subscribe(data => {
+      //alert(data);
       console.log(data);
       this.friends = data;
-    
+      //alert(this.friends);
     })
-
+    //}
   }
 
   getFriends(){

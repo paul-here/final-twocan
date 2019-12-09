@@ -31,11 +31,12 @@ export class AdminComponent implements OnInit {
     })
   }
       /// Remove User not working ///  
-  // removeUser(){
-  //   this.http.delete<User>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/removeUser').subscribe(data => {
-  //     console.log("delete success");
+  removeUser(username){
+    //let temp = document.getElementById("remove")
+    this.http.delete<any>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/removeUser?' + 'userid=' + username).subscribe(data => {
+      console.log("delete success");
 
-  //   })
-  // }
+    })
+  }
 
 }
