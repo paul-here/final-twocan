@@ -26,7 +26,7 @@ export class AuthenticationService {
         
       })
 
-      alert(sessionStorage.getItem('username'));
+      // alert(sessionStorage.getItem('username'));
       
       if(sessionStorage.getItem('username') != null)
       {
@@ -47,44 +47,12 @@ export class AuthenticationService {
       .append('userID', username);
       this.http.post<any>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/login?' + 'password=' + password + '&' +'userID='+username, {params}).subscribe(data => {
         //alert(data);
-        //temp = data;
-        alert(data);
         if(data === true)
         {
-          //temp = "true";
-          //alert( 'temp == ' + temp)
-          //alert('step1');
           sessionStorage.setItem('admin', username);
-          //return true;
         }
-        // else
-        // {
-        //   //alert('step2');
-        //   temp = "false";
-        // }
-        /*else
-        {
-          alert("Boolean??")      
-        }*/
       })
-      /*if(temp == true)
-      {
-        sessionStorage.setItem('admin', username);
-      }
-      alert(temp + " == temp");
-      return temp;*/
-      //return false;
-      //return temp;
-      // if(temp == "true")
-      // {
-      //   alert('temp returning true');
-      //   return true;
-      // }
-      // else
-      // {
-      //   alert('It is fucking false..');
-      //   return false;
-      // }
+
       if(sessionStorage.getItem('admin') != null)
       {
         return true;
@@ -101,26 +69,15 @@ export class AuthenticationService {
     let returnDisp;
     if(username != "admin")
     {
-      // const params = new HttpParams()
-      // .append('password', password)
-      // .append('userID', username);
-      // this.http.post<any>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/login', {params}).subscribe(data => {
-      //   alert(data);
-      //   returnDisp = data;
-      // })
-      // if(returnDisp == true)
-      // {
-      //   sessionStorage.setItem('username', username);
-      // }
       returnDisp = this.checkUser(username, password);
     }
     else
     {
-      //alert(this.checkAdmin(username, password));
+      // alert(this.checkAdmin(username, password));
       returnDisp = this.checkAdmin(username, password);
-      //alert(returnDisp + '@checkAdmin') 
+      // alert(returnDisp + '@checkAdmin') 
     }
-    //alert(returnDisp + ' == returnDisp')
+    // alert(returnDisp + ' == returnDisp')
     return returnDisp;
 
   }
