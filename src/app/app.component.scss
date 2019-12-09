@@ -1,8 +1,17 @@
+$primary: rgb(220, 20, 60);
+
 .side_nav{
     //margin-left : 0px;
     position: absolute;
     left: 0px;
     display:inline-block;
+    background-color: $primary;
+    height: stretch;
+    
+}
+
+a {
+    color: white;
 }
 
 .side_side{
