@@ -4,6 +4,7 @@ import { AuthenticationService } from '../service/authentication.service';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { ApiServiceService } from '../service/api-service';
 import { Friends } from '../service/friends';
+import { Messages } from '../service/message';
 import { merge } from 'rxjs';
 @Component({
   selector: 'app-friends',
@@ -16,6 +17,7 @@ export class FriendsComponent implements OnInit {
 
 
   Friends : Friends[] = [];
+  Messages : Messages[] = [];
  
   constructor(private loginService: AuthenticationService,public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
@@ -46,20 +48,24 @@ export class FriendsComponent implements OnInit {
     
     // })
     let user = sessionStorage.getItem("username");
-    this.http.get<Friends[]>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/getFriends?userID=' + user).subscribe(data => {
+    this.http.get<Friends[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/getFriends?userID=' + user).subscribe(data => {
       console.log(data);
       this.Friends = data;
     
     })
   }
 
-  // $scope.checkMessages = function(event){
-  //   alert(event.target.id); 
-  // }
   checkMessages(mergedId)
   {
-    console.log(mergedId);
-    // alert(mergedId);
+    //document.getElementById('chatbox').innerHTML="";
+    this.http.get<Messages[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/messages/getMessages?n=15&uniqID=' + mergedId).subscribe(data =>{
+      console.log(data);
+      this.Messages = data;
+    })
+    //console.log(mergedId);
+    //alert(mergedId);
   }
+
+  //sendMessage()
 
 }
