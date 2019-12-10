@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiServiceService } from '../service/api-service';
 import { Router } from '@angular/router';
-import {User } from '../service/User';
+import {User } from '../service/user';
 import {HttpClient} from '@angular/common/http';
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 @Component({
@@ -28,6 +28,12 @@ export class AdminComponent implements OnInit {
       console.log(data);
       this.Users = data;
     
+    })
+  }
+
+  removeUser(username){
+    this.http.delete<any>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/removeUser?userid=' + username).subscribe(data => {
+      console.log("DELETED");
     })
   }
 

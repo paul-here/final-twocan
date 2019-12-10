@@ -1,7 +1,7 @@
 import {Friends} from './friends';
-import {Groups} from './Groups';
+import {Groups} from './groups';
 
-export class User{
+export class User {
     username:string;
     password:string;
     email:string;

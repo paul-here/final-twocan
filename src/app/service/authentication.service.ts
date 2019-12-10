@@ -18,7 +18,7 @@ export class AuthenticationService {
       .append('password', password)
       .append('userID', username);
       this.http.post<any>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/login?' + 'password=' + password + '&' +'userID='+username, {params1}).subscribe(data => {
-        alert(data);
+       // alert(data);
         if(data === true)
         {
           sessionStorage.setItem('username', username);
@@ -34,7 +34,7 @@ export class AuthenticationService {
       }
       else
       {
-        alert('false again, you fucked up...USER');
+       // alert('false again, you fucked up...USER');
         return false;
       }
   }
