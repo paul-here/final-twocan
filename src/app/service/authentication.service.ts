@@ -59,7 +59,7 @@ export class AuthenticationService {
       }
       else
       {
-        //alert('false again, you fucked up...USER');
+        
         return false;
       }
   }
