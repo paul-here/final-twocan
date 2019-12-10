@@ -3,7 +3,7 @@ import { ApiServiceService } from '../service/api-service';
 import { Router } from '@angular/router';
 import {User } from '../service/user';
 import {HttpClient} from '@angular/common/http';
-import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+//import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -32,7 +32,7 @@ export class AdminComponent implements OnInit {
   }
 
   removeUser(username){
-    this.http.delete<any>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/removeUser?userid=' + username).subscribe(data => {
+    this.http.delete<any>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/removeUser?userid=', username).subscribe(data => {
       console.log("DELETED");
     })
   }

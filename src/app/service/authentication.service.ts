@@ -22,26 +22,28 @@ export class AuthenticationService {
         if(data === true)
         {
           sessionStorage.setItem('username', username);
+          console.log("session set");
         }
-        
+        //alert(sessionStorage.getItem('username'));
       })
 
-      // alert(sessionStorage.getItem('username'));
+      //alert(sessionStorage.getItem('username'));
       
-      if(sessionStorage.getItem('username') != null)
-      {
+      if(sessionStorage.getItem('username') != null){
+        alert("working")
         return true;
+        //console.log("whats supposed to happen");
       }
-      else
-      {
-       // alert('false again, you fucked up...USER');
+      else{
+       alert('false again, you fucked up...USER');
         return false;
+        // console.log("fucked up");
       }
   }
 
   checkAdmin(username, password)
   {
-    let temp;
+    //let temp;
     const params = new HttpParams()
       .append('password', password)
       .append('userID', username);
@@ -77,13 +79,13 @@ export class AuthenticationService {
   isUserLoggedIn(){
     let user = sessionStorage.getItem('username')
     //console.log(!(user === null))
-    return !(user === null)
+    return !(user == null)
 
   }
   isAdminLoggedIn(){
     let admin = sessionStorage.getItem('username')//('admin')
     //console.log(!(admin === null))
-    return !(admin === null)
+    return !(admin == null)
   }
   logout(){
     sessionStorage.removeItem('username');

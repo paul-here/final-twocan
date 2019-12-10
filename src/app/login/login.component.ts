@@ -25,13 +25,14 @@ export class LoginComponent implements OnInit {
   {
     if(this.username != 'admin')
     {
-      // alert('User Path Active');
+      
       this.checkLogin();
+      console.log("checkLoginCall")
     }
     else if(this.username == 'admin')
     {
-      // alert('Admin Path Active');
       this.checkAdminLogin();
+      console.log("checkAdminCall")
     }
     else
     {
