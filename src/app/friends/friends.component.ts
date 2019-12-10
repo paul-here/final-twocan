@@ -19,7 +19,7 @@ export class FriendsComponent implements OnInit {
   constructor(private loginService: AuthenticationService,public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
   ngOnInit() {
-    //this.getFriends();
+    this.getFriends();
   }
 
   friendRequest(){
@@ -31,18 +31,19 @@ export class FriendsComponent implements OnInit {
     .append('friendID', _request)
     .append('userid', user);
     this.http.post<any>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/addFriend?' + 'friendID=' + _request + '&' + 'userid=' + user,{params}).subscribe(data => {
-      console.log('Sent request');
+      //console.log('Sent request');
     })
 
 
   }
 
   getFriends(){
-    // this.http.get<Friends[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/').subscribe(data => {
-    //   console.log(data);
-    //   this.Friends = data;
+    let user = sessionStorage.getItem("username");
+    this.http.get<Friends[]>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/getFriends?userID=' + user).subscribe(data => {
+      console.log(data);
+      //this.Friends = data;
     
-    // })
+    })
   }
 
 }

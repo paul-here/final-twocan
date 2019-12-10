@@ -16,6 +16,7 @@
   </form>
 </div>
 <br>
+
 <div class = "friendsList">
 <table class="table table-bordered">
   <thead class="black white-text">
@@ -23,15 +24,19 @@
       <th *ngFor="let head of headElements" scope="col">{{head}}</th>
     </tr>
   </thead>
-  <tbody>
-    <tr mdbTableCol *ngFor="let friend of Friends" >
+  
+    <tr  *ngFor="let friend of Friends" >
       
-      <!-- <td><img [src]="{{el.profile_pic}}"></td> -->
       
-      <td>{{friend.name}}</td>
+      <td>
+        <div *ngIf="users.friends">
+          <div *ngFor="let friend of users.friends">
+            {{friend.username}}
+          </div>
+        </div>
+      </td>
       <td><button id ="viewBtn" type="button" class="btn btn-danger" data-toggle="modal" data-target="#msgModal">View Message</button></td>
     </tr>
-  </tbody>
 </table>
 </div>
 
