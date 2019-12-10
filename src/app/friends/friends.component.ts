@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../service/authentication.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 import { ApiServiceService } from '../service/api-service';
 import { Friends } from '../service/friends';
 @Component({
@@ -27,6 +27,12 @@ export class FriendsComponent implements OnInit {
 
     //this.lo
     let user = sessionStorage.getItem("username");
+    const params = new HttpParams()
+    .append('friendID', _request)
+    .append('userid', user);
+    this.http.post<any>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/addFriend?' + 'friendID=' + _request + '&' + 'userid=' + user,{params}).subscribe(data => {
+      console.log('Sent request');
+    })
 
 
   }
