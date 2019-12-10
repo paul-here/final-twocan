@@ -49,11 +49,11 @@ export class AuthenticationService {
         //alert(data);
         if(data === true)
         {
-          sessionStorage.setItem('admin', username);
+          sessionStorage.setItem('username', username);
         }
       })
 
-      if(sessionStorage.getItem('admin') != null)
+      if(sessionStorage.getItem('username') != null)
       {
         return true;
       }
@@ -81,11 +81,13 @@ export class AuthenticationService {
 
   }
   isAdminLoggedIn(){
-    let admin = sessionStorage.getItem('admin')
+    let admin = sessionStorage.getItem('username')//('admin')
     //console.log(!(admin === null))
     return !(admin === null)
   }
   logout(){
     sessionStorage.removeItem('username');
+    //sessionStorage.removeItem('admin');
+    sessionStorage.clear();
   }
 }

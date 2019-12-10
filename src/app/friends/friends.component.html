@@ -19,20 +19,36 @@
 <div class = "friendsList">
 <table class="table table-bordered">
   <thead class="black white-text">
-    <tr>
+    <!-- <tr>
       <th *ngFor="let head of headElements" scope="col">{{head}}</th>
-    </tr>
+      <div *ngFor="let friends of Friends">
+        <div>{{friends.username}}</div>
+        <div><button value="{{friends.mergedId}}"></button></div>
+      </div>
+    </tr> -->
   </thead>
   <tbody>
     <tr mdbTableCol *ngFor="let friend of Friends" >
       
       <!-- <td><img [src]="{{el.profile_pic}}"></td> -->
       
-      <td>{{friend.name}}</td>
-      <td><button id ="viewBtn" type="button" class="btn btn-danger" data-toggle="modal" data-target="#msgModal">View Message</button></td>
+      <td>{{friend.username}}</td>
+      <td><button id ="viewBtn" type="button" class="btn btn-danger" data-toggle="modal" data-target="#msgModal" (click)="checkMessages(friend.uid)">View Messages</button></td>
+      
+      
+
     </tr>
   </tbody>
 </table>
 </div>
+<!-- <div class="container">
+  <div class="side_nav2">
+    <nav class="nav flex-column">
+      <ul *ngFor="let friend of Friends">
+        <div id="myFriends">{{friend.username}}</div><br>
+      </ul>
+    </nav>
+  </div>
+</div> -->
 
 
