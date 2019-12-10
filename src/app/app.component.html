@@ -20,10 +20,10 @@
         <nav class="nav flex-column">
               <ul>      
               <a *ngIf="loginService.isUserLoggedIn() "  routerLink="/friends" class="nav-link " >Friends</a>
-              <a *ngIf="loginService.isUserLoggedIn(); "  class="nav-link" routerLink="/groups">Groups</a>
-              <a *ngIf="loginService.isUserLoggedIn(); "  class = "nav-link" routerLink="/settings">Settings</a> 
-              <a *ngIf="loginService.isUserLoggedIn(); "  routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a>
-              <!-- <a *ngIf="loginService.isAdminLoggeIn(); " routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a> -->
+              <a *ngIf="loginService.isUserLoggedIn() "  class="nav-link" routerLink="/groups">Groups</a>
+              <a *ngIf="loginService.isUserLoggedIn() "  class = "nav-link" routerLink="/settings">Settings</a> 
+              <a *ngIf="loginService.isUserLoggedIn() || loginService.isAdminLoggedIn() "  routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a>
+              <!-- <a *ngIf="loginService.isAdminLoggedIn(); " routerLink="/login" (click)=logout() class = "nav-link"   >Logout</a> -->
             </ul>
             </nav> 
     </div>

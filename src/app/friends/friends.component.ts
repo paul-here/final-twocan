@@ -4,6 +4,7 @@ import { AuthenticationService } from '../service/authentication.service';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import { ApiServiceService } from '../service/api-service';
 import { Friends } from '../service/friends';
+import { merge } from 'rxjs';
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -19,6 +20,7 @@ export class FriendsComponent implements OnInit {
   constructor(private loginService: AuthenticationService,public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
   ngOnInit() {
+    //this.getFriends();
     this.getFriends();
   }
 
@@ -38,12 +40,29 @@ export class FriendsComponent implements OnInit {
   }
 
   getFriends(){
+    // let user = sessionStorage.getItem("username");
+    // this.http.get<Friends[]>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/getFriends?userID=' + user).subscribe(data => {
+    //   console.log(data);
+    //   //this.Friends = data;
+    
+    // // })
     let user = sessionStorage.getItem("username");
     this.http.get<Friends[]>('http://twocan-users.us-east-2.elasticbeanstalk.com/users/getFriends?userID=' + user).subscribe(data => {
       console.log(data);
-      //this.Friends = data;
+      this.Friends = data;
     
     })
   }
 
+
+  // $scope.checkMessages = function(event){
+  //   alert(event.target.id); 
+  // }
+  checkMessages(mergedId)
+  {
+    console.log(mergedId);
+    // alert(mergedId);
+  }
+
 }
+

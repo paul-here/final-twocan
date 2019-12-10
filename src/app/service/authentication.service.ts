@@ -49,103 +49,31 @@ export class AuthenticationService {
         //alert(data);
         if(data === true)
         {
-          sessionStorage.setItem('admin', username);
+          sessionStorage.setItem('username', username);
         }
       })
 
-      if(sessionStorage.getItem('admin') != null)
+      if(sessionStorage.getItem('username') != null)
       {
         return true;
       }
       else
       {
-        //alert('false again, you fucked up...USER');
+        
         return false;
       }
   }
 
   authenticate(username, password)
   {
-    let returnDisp;
     if(username != "admin")
     {
-      returnDisp = this.checkUser(username, password);
+      return this.checkUser(username, password);
     }
-    else
-    {
-      // alert(this.checkAdmin(username, password));
-      returnDisp = this.checkAdmin(username, password);
-      // alert(returnDisp + '@checkAdmin') 
-    }
-    // alert(returnDisp + ' == returnDisp')
-    return returnDisp;
-
+    // alert(this.checkAdmin(username, password));
+    return this.checkAdmin(username, password);
   }
 
-  // checkAdmin(username, password)
-  // {
-  //   let temp;
-  //   const params = new HttpParams()
-  //     .append('password', password)
-  //     .append('userID', username);
-  //     this.http.post<any>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/login?' + 'password=' + password + '&' +'userID='+username, {params}).subscribe(data => {
-  //       //alert(data);
-  //       //temp = data;
-  //       alert(data);
-  //       if(data === true)
-  //       {
-  //         temp = "true";
-  //         sessionStorage.setItem('admin', username);
-  //         //return true;
-  //       }
-  //       else
-  //       {
-  //         temp = "false";
-  //       }
-  //       /*else
-  //       {
-  //         alert("Boolean??")      
-  //       }*/
-  //     })
-  //     /*if(temp == true)
-  //     {
-  //       sessionStorage.setItem('admin', username);
-  //     }
-  //     alert(temp + " == temp");
-  //     return temp;*/
-  //     //return false;
-  //     //return temp;
-  //     if(temp === "true")
-  //     {
-  //       return true;
-  //     }
-  //     else
-  //     {
-  //       return false;
-  //     }
-  // }
-
-  /*authenticate(username,password){
-    if(username == "Jorge" && password == "password"){
-      sessionStorage.setItem('username',username)
-      let key = username;
-      //localStorage.setItem(key,this.username);
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-  checkAdmin(username,password){
-    if(username === "admin" && password === "admin"){
-      sessionStorage.setItem('username',username)
-
-      return true;
-    }
-    else{
-      return false;
-    }
-  }*/
   isUserLoggedIn(){
     let user = sessionStorage.getItem('username')
     //console.log(!(user === null))
@@ -153,11 +81,13 @@ export class AuthenticationService {
 
   }
   isAdminLoggedIn(){
-    let admin = sessionStorage.getItem('admin')
+    let admin = sessionStorage.getItem('username')//('admin')
     //console.log(!(admin === null))
     return !(admin === null)
   }
   logout(){
     sessionStorage.removeItem('username');
+    //sessionStorage.removeItem('admin');
+    sessionStorage.clear();
   }
 }

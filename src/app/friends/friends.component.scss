@@ -31,3 +31,17 @@
 #viewBtn{
   margin-left: 50px;
 }
+
+$secondary: rgb(40, 40, 70);
+
+.side_nav2{
+  position: static;
+  left:0px;
+  display:block;
+  background-color:$secondary;
+  height: stretch;
+}
+
+#myFriends{
+  color:white;
+}
