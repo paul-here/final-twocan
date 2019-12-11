@@ -18,6 +18,9 @@ export class FriendsComponent implements OnInit {
 
   Friends : Friends[] = [];
   Messages : Messages[] = [];
+
+  MergedId: string;
+  MyInput: string;
  
   constructor(private loginService: AuthenticationService,public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
@@ -57,6 +60,7 @@ export class FriendsComponent implements OnInit {
 
   checkMessages(mergedId)
   {
+    this.MergedId = mergedId;
     //document.getElementById('chatbox').innerHTML="";
     this.http.get<Messages[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/messages/getMessages?n=15&uniqID=' + mergedId).subscribe(data =>{
       console.log(data);
@@ -66,6 +70,22 @@ export class FriendsComponent implements OnInit {
     //alert(mergedId);
   }
 
-  //sendMessage()
+  sendMessage()
+  {
+    // let message : string = (document.getElementById("sendMessage")as HTMLInputElement).value;
+    let user= sessionStorage.getItem('username');
+
+    // console.log(this.MyInput)
+    // console.log(this.MergedId)
+    // console.log(user)
+    
+    this.http.post('http://twocan-zuul.us-east-2.elasticbeanstalk.com/messages/addMessage?text=' + this.MyInput + '&uniqID=' + this.MergedId + '&userID=' + user, {
+
+    })//(`http://twocan-zuul.us-east-2.elasticbeanstalk.com/messages/addMessage`, {
+      // text: this.MyInput,
+      // uniqID: this.MergedId,
+      // userID: user
+    .subscribe(data => console.log(data))
+  }
 
 }

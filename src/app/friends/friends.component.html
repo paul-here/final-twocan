@@ -50,11 +50,16 @@
         <p>{{message.messageBody}}</p><br>
     </div>
   </div>
-  <form name="message" action="">
+  <!-- <form name="message" action="">
     <input name="usermsg" type="text" id="usermsg" size="63"/>
-    <!-- <input class="btn btn-danger" name="submitmsg" type="submit" id="submitmsg" value="Send"/> -->
+    <input class="btn btn-danger" name="submitmsg" type="submit" id="submitmsg" value="Send"/>
     
-  </form>
+  </form> -->
+
+  <form class = "sendMessage">
+      <input [(ngModel)]="MyInput" id ="sendNewMessage"type = "text" placeholder="  Say what you need to say..." size="25" name="my-input"> 
+      <button id="newMsg" type="button" class="btn btn-danger" (click) = "sendMessage()" >Send!</button>
+    </form>
 </div>
 <!-- <div class="container">
   <div class="side_nav2">
