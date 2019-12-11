@@ -30,12 +30,12 @@ export class AuthenticationService {
       //alert(sessionStorage.getItem('username'));
       
       if(sessionStorage.getItem('username') != null){
-        alert("working")
+        //alert("working")
         return true;
         //console.log("whats supposed to happen");
       }
       else{
-       alert('false again, you fucked up...USER');
+       //alert('false again, you fucked up...USER');
         return false;
         // console.log("fucked up");
       }
