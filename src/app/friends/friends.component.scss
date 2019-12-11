@@ -1,8 +1,19 @@
+$primary: rgb(220, 20, 60);
+
 .friendsList{
-    margin: 0px auto;
+    /*margin: 0px auto;
     width: 50%;
-    position: relative;
+    position: relative;*/
+    width:55%;
+    margin-right:2%;
+    //float:left;
+    display: inline-block;
     
+}
+
+.messageWindow{
+  width:42%;
+  float:left;
 }
 .black white-text{
     background-color: red;
@@ -44,4 +55,71 @@ $secondary: rgb(40, 40, 70);
 
 #myFriends{
   color:white;
+}
+
+body {
+  font:12px arial;
+  color: #222;
+  text-align:center;
+  padding:35px; }
+
+form, p, span {
+  margin:0;
+  padding:0; }
+
+input { font:12px arial; }
+
+a {
+  color:#0000FF;
+  text-decoration:none; }
+
+  a:hover { text-decoration:underline; }
+
+#wrapper, #loginform {
+  margin:0 auto;
+  padding-bottom:25px;
+  background:#EBF4FB;
+  width:504px;
+  border:1px solid #ACD8F0; }
+
+#loginform { padding-top:18px; }
+
+  #loginform p { margin: 5px; }
+
+#chatbox {
+  border:none;
+  text-align:left;
+  margin:0 auto;
+  margin-bottom:0px;
+  padding:10px;
+  background:#fff;
+  height:270px;
+  width:445px;
+  //border:3px solid red; //for testing only!
+  overflow:auto; }
+
+#usermsg {
+  width:395px;
+  border:1px solid #ACD8F0; }
+
+#submit { width: 60px; }
+
+.error { color: #ff0000; }
+
+#menu { padding:12.5px 25px 12.5px 25px; }
+
+.welcome { float:left; }
+
+.logout { float:right; }
+
+.msgln { margin:0 0 2px 0; }
+
+#mbtext{
+  color:blue;
+}
+
+#sendNewMessage{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 190px;
 }

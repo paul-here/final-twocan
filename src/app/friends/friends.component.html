@@ -34,12 +34,32 @@
       
       <td>{{friend.username}}</td>
       <td><button id ="viewBtn" type="button" class="btn btn-danger" data-toggle="modal" data-target="#msgModal" (click)="checkMessages(friend.uid)">View Messages</button></td>
-      
-      
-
     </tr>
   </tbody>
 </table>
+</div>
+
+<div class="messageWindow">
+  <div id="menu">
+    <p class="welcome"></p>
+  </div>
+
+  <div id="chatbox">
+    <div *ngFor="let message of Messages">
+        <span id="mbtext">{{message.userID}}</span>
+        <p>{{message.messageBody}}</p><br>
+    </div>
+  </div>
+  <!-- <form name="message" action="">
+    <input name="usermsg" type="text" id="usermsg" size="63"/>
+    <input class="btn btn-danger" name="submitmsg" type="submit" id="submitmsg" value="Send"/>
+    
+  </form> -->
+
+  <form class = "sendMessage">
+      <input [(ngModel)]="MyInput" id ="sendNewMessage"type = "text" placeholder="  Say what you need to say..." size="25" name="my-input"> 
+      <button id="newMsg" type="button" class="btn btn-danger" (click) = "sendMessage()" >Send!</button>
+    </form>
 </div>
 <!-- <div class="container">
   <div class="side_nav2">
