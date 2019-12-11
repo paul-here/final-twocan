@@ -22,7 +22,8 @@ export class FriendsComponent implements OnInit {
   MergedId: string;
   MyInput: string;
 
-  Poll = interval(5000);
+  // TODO: Change to 5000
+  Poll = interval(1000);
  
   constructor(private loginService: AuthenticationService,public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
@@ -31,7 +32,7 @@ export class FriendsComponent implements OnInit {
     this.getFriends();
 
     this.Poll.subscribe(x => {
-      const mergedId = 'gurpreetpaul'
+      const mergedId = this.MergedId
       this.http.get('http://twocan-zuul.us-east-2.elasticbeanstalk.com/messages/getMessages?n=15&uniqID=' + mergedId)
         .subscribe(messages => this.Messages = messages)
     })
@@ -94,6 +95,8 @@ export class FriendsComponent implements OnInit {
       // uniqID: this.MergedId,
       // userID: user
     .subscribe(data => console.log(data))
+
+    this.MyInput = ''
   }
 
 }
