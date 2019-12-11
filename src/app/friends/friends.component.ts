@@ -41,7 +41,7 @@ export class FriendsComponent implements OnInit {
   friendRequest(){
     let _request : string = (document.getElementById("friendRequest")as HTMLInputElement).value;
 
-    //this.lo
+   
     let user = sessionStorage.getItem("username");
     const params = new HttpParams()
     .append('friendID', _request)
@@ -54,11 +54,7 @@ export class FriendsComponent implements OnInit {
   }
 
   getFriends(){
-    // this.http.get<Friends[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/').subscribe(data => {
-    //   console.log(data);
-    //   this.Friends = data;
-    
-    // })
+ 
     let user = sessionStorage.getItem("username");
     this.http.get<Friends[]>('http://twocan-zuul.us-east-2.elasticbeanstalk.com/users/getFriends?userID=' + user).subscribe(data => {
       console.log(data);

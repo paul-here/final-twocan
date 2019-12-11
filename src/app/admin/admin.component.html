@@ -6,18 +6,7 @@
     <table class="table table-bordered">
 
         
-        <!-- <td><button type="button" (click) = getallUsers() class="btn btn-warning" data-toggle="modal" data-target="#msgModal">View Friends</button></td> -->
-
-        <!-- <tr><td *ngFor="let users of Users"> {{ users["username"] }}</td></tr> -->
-          <!-- <tr >
-           
-            <td *ngFor="let users of Users"> {{ users["username"] }}</td>
-            
-            
-          </tr>
-          <tr>
-              <td *ngFor="let users of Users"> {{users["email"]}}</td>
-          </tr> -->
+       
           
         <tr *ngFor="let users of Users" >
           <td>{{users.username}}</td>
@@ -29,7 +18,7 @@
               </div>
             </div>
           </td>
-          <td><button type="button" class="btn btn-warning" value='{{users["username"]}}'   >Remove User</button></td>
+          <td><button type="button" class="btn btn-warning" value='' (click)=removeUser(users.username)  >Remove User</button></td>
           <!-- (click) = removeUser(this.value) -->
         </tr>
     </table>

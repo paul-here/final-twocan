@@ -10,8 +10,6 @@ import { AuthenticationService } from '../service/authentication.service';
 export class LoginComponent implements OnInit {
   username : string
   password: ''
-  //username : string = (document.getElementById("username") as HTMLInputElement).value;
-  //password : string = (document.getElementById("passowrd") as HTMLInputElement).value;
   invalidLogin = false
   loginError: string
 
@@ -25,27 +23,21 @@ export class LoginComponent implements OnInit {
   {
     if(this.username != 'admin')
     {
-      // alert('User Path Active');
+      
       this.checkLogin();
-    }
-    else if(this.username == 'admin')
-    {
-      // alert('Admin Path Active');
+      console.log("checkLoginCall")
+
+    } else {
+
       this.checkAdminLogin();
-    }
-    else
-    {
-      // alert("Something's Wrong");
+      console.log("checkAdminCall")
     }
   }
 
   checkLogin(){
-    //alert(this.username);
-    //alert(this.loginService.authenticate(this.username,this.password));
     if(this.loginService.authenticate(this.username,this.password)){
       this.router.navigate(['/home'])
       this.invalidLogin = false
-      //this.loginService.logout();
       console.log("Valid")
     }
 
@@ -56,7 +48,6 @@ export class LoginComponent implements OnInit {
     }
   }
   checkAdminLogin(){
-    //alert(this.loginService.checkAdmin(this.username, this.password));
     if(this.loginService.checkAdmin(this.username,this.password)/*!=null*/){
       this.router.navigate(['/admin'])
       this.invalidLogin = false
@@ -64,7 +55,6 @@ export class LoginComponent implements OnInit {
     }
     else{
       this.invalidLogin = true
-      // alert("you are NOT SUPPOSED TO BEHERE.");
       console.log("Invalid")
     }
   }
