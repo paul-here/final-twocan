@@ -5,7 +5,7 @@ import {HttpClient, HttpParams} from '@angular/common/http';
 import { ApiServiceService } from '../service/api-service';
 import { Friends } from '../service/friends';
 import { Messages } from '../service/message';
-import { merge } from 'rxjs';
+import { interval } from 'rxjs';
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
@@ -17,16 +17,24 @@ export class FriendsComponent implements OnInit {
 
 
   Friends : Friends[] = [];
-  Messages : Messages[] = [];
+  Messages : any = [];
 
   MergedId: string;
   MyInput: string;
+
+  Poll = interval(5000);
  
   constructor(private loginService: AuthenticationService,public restApi: ApiServiceService, public router: Router,private http: HttpClient) { }
 
   ngOnInit() {
     //this.getFriends();
     this.getFriends();
+
+    this.Poll.subscribe(x => {
+      const mergedId = 'gurpreetpaul'
+      this.http.get('http://twocan-zuul.us-east-2.elasticbeanstalk.com/messages/getMessages?n=15&uniqID=' + mergedId)
+        .subscribe(messages => this.Messages = messages)
+    })
   }
 
   friendRequest(){
